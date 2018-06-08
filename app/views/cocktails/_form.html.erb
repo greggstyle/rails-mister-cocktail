@@ -1,0 +1,18 @@
+<div class ="container">
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <h2> Add Cocktail </h2>
+
+      <%= simple_form_for(@cocktail) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <%= link_to "back to cocktails" , cocktails_path, class: 'btn btn-info'%>
+      <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
