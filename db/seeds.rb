@@ -18,7 +18,7 @@ attributes['drinks'].each {|data|
 response = open("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail").read
 attributes = JSON.parse(response)
 attributes['drinks'].each {|data|
-  cocktail = Cocktail.create(name: data['strDrink']) # photo : data['strDrinkThumb]'
+  cocktail = Cocktail.create(name: data['strDrink'], photo: data['strDrinkThumb'])
   id = data['idDrink']
   response = open("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=#{id}").read
   attributes = JSON.parse(response)
